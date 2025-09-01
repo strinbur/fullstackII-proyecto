@@ -12,3 +12,8 @@ function valformulario() {
 
     alert("Solicitud enviada con exito");
 }
+
+// MENSAJE AGREGAR AL CARRITO
+
+
+// FUNCION DE AGREGAR AL CARRITO

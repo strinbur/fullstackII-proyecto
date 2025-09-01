@@ -2640,6 +2640,8 @@ input, select, textarea {
 				line-height: 3em;
 			}
 
+			
+
 		/* Banner */
 
 			#banner {
@@ -2735,12 +2737,10 @@ input, select, textarea {
     object-fit: contain;
 	display: block;
 }
-
 /* CONFIG ICONO DEL LOGIN */
 
 
 /* CONFIG DEL CATALOGO */
-
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -2797,5 +2797,69 @@ body {
   background: #007bff;
   color: white;
 }
-
 /*  CONFIG DEL CATALOGO */
+
+
+/* CONFIG DEL CARRITO */
+
+/* CONFIG DEL CARRITO*/
+
+
+/* MENSAJE AGREGAR AL CARRITO */
+
+#mensaje-flotante {
+    position: fixed;
+    top: 20px;
+    right: 850px;
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #dcdcdc;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+#mensaje-flotante.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.icono {
+    color: green;
+    font-weight: bold;
+}
+/* MENSAJE AGREGAR AL CARRITO */
+
+/* TRAILER CON TEXTO */
+.video-texto {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center; /* ✅ Centra horizontalmente */
+    gap: 40px;
+    margin: 50px auto;       /* ✅ Centra el contenedor */
+    max-width: 1400px;       /* ✅ Limita el ancho total del bloque */
+    padding: 0 20px;         /* ✅ Espaciado lateral en pantallas pequeñas */
+    flex-wrap: wrap;         /* ✅ Para que se acomode bien en móviles */
+}
+
+.video-texto iframe {
+    width: 800px;
+    height: 500px;
+    max-width: 100%; /* Para hacerlo responsivo */
+}
+
+.video-texto p {
+    max-width: 500px;
+    line-height: 1.6;
+    font-size: 16px;
+    text-align: justify;
+}
+/* TRAILER CON TEXTO */
