@@ -2628,20 +2628,6 @@ input, select, textarea {
 			#main-wrapper, #footer-wrapper {
 				padding: 40px 30px 40px 30px;
 			}
-
-		/* Logo */
-
-			#logo h1 {
-				font-size: 2.75em;
-				padding: 0.2em 0.275em;
-			}
-
-			#logo span {
-				line-height: 3em;
-			}
-
-			
-
 		/* Banner */
 
 			#banner {
@@ -2678,7 +2664,7 @@ input, select, textarea {
 		/* Footer */
 
 			#footer section {
-				border-bottom: solid 1px #ccc;
+				border-bottom: solid 1px #d3d0d0;
 				padding-bottom: 3em;
 				margin-bottom: 1em !important;
 			}
@@ -2690,6 +2676,7 @@ input, select, textarea {
 	}
 
 
+/* Diseño formulario */
 	.form-container {
     max-width: 1700px;
     margin: 80px auto;
@@ -2701,7 +2688,7 @@ input, select, textarea {
 .form-container .fields > div {
     margin-bottom: 20px;
 }
-
+/* Diseño formulario */
 
 /* CONFIG ICONO DEL CARRITO */
 .cart-fixed {
@@ -2718,8 +2705,6 @@ input, select, textarea {
     display: block;
 }
 /* CONFIG ICONO DEL CARRITO */
-
-
 
 
 /* CONFIG ICONO DEL LOGIN */
@@ -2799,18 +2784,12 @@ body {
 }
 /*  CONFIG DEL CATALOGO */
 
-
-/* CONFIG DEL CARRITO */
-
-/* CONFIG DEL CARRITO*/
-
-
 /* MENSAJE AGREGAR AL CARRITO */
 
 #mensaje-flotante {
     position: fixed;
     top: 20px;
-    right: 20px;
+    right: 850px;
     background-color: #ffffff;
     color: #000;
     border: 1px solid #dcdcdc;
@@ -2833,7 +2812,7 @@ body {
 }
 /* MENSAJE AGREGAR AL CARRITO */
 
-/* TRAILER CON TEXTO */
+/* Videos CON TEXTO */
 .video-texto {
     display: flex;
     align-items: flex-start;
@@ -2954,32 +2933,71 @@ body {
     background-color: #c0392b;
 }
 
-/* --- Total --- */
+/* --- Contenedor del total y botones --- */
+.carrito-footer {
+  display: flex;
+  justify-content: space-between; /* separa total y botones */
+  align-items: center; /* centra verticalmente */
+  margin-top: 20px;
+  padding: 15px;
+  border-top: 2px solid #eee;
+}
+
 .total {
-    text-align: right;
-    font-size: 22px;
-    margin-top: 20px;
-    font-weight: bold;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
-/* --- Botones --- */
 .carrito-botones {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 10px; /* espacio entre botones */
 }
 
-.carrito-botones button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-    background-color: #007bff;
-    color: white;
+/* --- Nuevo layout de carrito con resumen a la derecha --- */
+.carrito-grid {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* --- Sección de productos (lista) --- */
+.carrito-productos {
+    flex: 3;
+}
+
+/* --- Resumen del carrito (total + botones) --- */
+.carrito-resumen {
+    flex: 1;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.carrito-resumen .total {
+    font-size: 1.4em;
     font-weight: bold;
 }
 
-.carrito-botones button:hover {
-    background-color: #0056b3;
+.carrito-resumen .carrito-botones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.carrito-resumen .carrito-botones button {
+    padding: 10px;
+    background-color: #009fe3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.carrito-resumen .carrito-botones button:hover {
+    background-color: #007bbd;
 }

@@ -16,10 +16,7 @@
 					<header id="header" class="container">
 
 						<!-- Logo -->
-							<div id="logo">
-								<h1><a href="index.html">Microplai</a></h1>
-								<span>Tu mama</span>
-							</div>
+							<h1><a href="index.html"><img src="images/Logo tienda.png" alt="Logo" height="200" width="200"></a></h1>
 
 						<!-- MENU  -->
 							<nav id="nav">
@@ -55,6 +52,52 @@
 			<!-- Banner -->
 
 
+<section class="form-container">
+    <header>
+        <h2>Registro de Usuario</h2>
+        <p>Completa el formulario para registrarte.</p>
+    </header>
+
+    <form id="registerForm" onsubmit="event.preventDefault(); validarRegistro();">
+        <div class="fields">
+            <div class="field">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre.." required>
+            </div>
+
+            <div class="field">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido.." required>
+            </div>
+
+            <div class="field">
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" id="correo" name="correo" placeholder="micorre@gmail.com.." required>
+            </div>
+
+			<div class="field">
+    			<label for="password">Contraseña</label>
+    			<input type="password" id="password" name="password" placeholder="La contraseña debe tener minimo 5 caracteres y maximo 20.." required>
+			</div>
+
+			<div class="field">
+    			<label for="confirmPassword">Confirmar Contraseña</label>
+    			<input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmar contraseña" required>
+			</div>
+        </div>
+
+        <div class="field" id="errores" style="color:rgb(0, 0, 0);"></div>
+
+        <ul class="actions">
+            <li><input type="submit" value="Registrarse" class="primary"></li>
+            <li><input type="reset" value="Borrar"></li>
+        </ul>
+    </form>
+</section>
+
+
+
+
 			<!-- Footer -->
 				<div id="footer-wrapper">
 					<footer id="footer" class="container">
@@ -63,13 +106,12 @@
 
 								<!-- Links -->
 									<section class="widget links">
-										<h3>Random Stuff</h3>
+										<h3>Horario de atencion</h3>
 										<ul class="style2">
-											<li><a href="#">Etiam feugiat condimentum</a></li>
-											<li><a href="#">Aliquam imperdiet suscipit odio</a></li>
-											<li><a href="#">Sed porttitor cras in erat nec</a></li>
-											<li><a href="#">Felis varius pellentesque potenti</a></li>
-											<li><a href="#">Nullam scelerisque blandit leo</a></li>
+											<li>Lunes a Viernes:</li>
+											<li>08:00 a 19:30 Hrs.</li>
+											<li>Sabado:</li>
+											<li>10:00 a 16:00 Hrs.</li>
 										</ul>
 									</section>
 
@@ -78,13 +120,12 @@
 
 								<!-- Links -->
 									<section class="widget links">
-										<h3>Random Stuff</h3>
+										<h3>Contacto</h3>
 										<ul class="style2">
-											<li><a href="#">Etiam feugiat condimentum</a></li>
-											<li><a href="#">Aliquam imperdiet suscipit odio</a></li>
-											<li><a href="#">Sed porttitor cras in erat nec</a></li>
-											<li><a href="#">Felis varius pellentesque potenti</a></li>
-											<li><a href="#">Nullam scelerisque blandit leo</a></li>
+											<li>Email:</li>
+											<li>microplaicontacto@gmail.com</li>
+											<li>Numero:</li>
+											<li>+569 1234 5678 </li>
 										</ul>
 									</section>
 
@@ -93,13 +134,12 @@
 
 								<!-- Links -->
 									<section class="widget links">
-										<h3>Random Stuff</h3>
+										<h3>¿Necesitas ayudas?</h3>
 										<ul class="style2">
-											<li><a href="#">Etiam feugiat condimentum</a></li>
-											<li><a href="#">Aliquam imperdiet suscipit odio</a></li>
-											<li><a href="#">Sed porttitor cras in erat nec</a></li>
-											<li><a href="#">Felis varius pellentesque potenti</a></li>
-											<li><a href="#">Nullam scelerisque blandit leo</a></li>
+											<li><a href="contactanos.html">Contactanos</a></li>
+											<li><a href="xbox.html">Catalogo XBOX</a></li>
+											<li><a href="play.html">Catalogo PlayStation</a></li>
+											<li><a href="nintendo.html">Catalogo Nintendo</a></li>
 										</ul>
 									</section>
 
@@ -108,17 +148,11 @@
 
 								<!-- Contact -->
 									<section class="widget contact last">
-										<h3>Contact Us</h3>
+										<h3>Nuestras Redes</h3>
 										<ul>
-											<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-											<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-											<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-											<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-											<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+											<li><a href="https://x.com/Microplaigaming" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="https://www.instagram.com/microplai/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 										</ul>
-										<p>1234 Fictional Road<br />
-										Nashville, TN 00000<br />
-										(800) 555-0000</p>
 									</section>
 
 							</div>
@@ -127,7 +161,14 @@
 							<div class="col-12">
 								<div id="copyright">
 									<ul class="menu">
-										<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										<li>&copy; 2025 Microplai. Todos los derechos reservados</li>
+										<li>
+											Desarrollado por:
+										</li>
+										Mario Alegria y Patricio Olguin
+										<li>
+
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -145,6 +186,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="funciones/funciones.js"></script>
 
 	</body>
 </html>

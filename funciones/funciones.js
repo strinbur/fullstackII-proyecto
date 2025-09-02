@@ -13,6 +13,10 @@ function valformulario() {
     alert("Solicitud enviada con exito");
 }
 
+// funcion del formateo del precio para el carrito
+function formatearPrecio(valor) {
+    return valor.toLocaleString("es-CL") + " CLP";
+}
 
 
 // FUNCION AGREGAR AL CARRITO
@@ -87,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-
         carrito.forEach((producto, index) => {
             const item = document.createElement("div");
             item.classList.add("item-carrito");
@@ -104,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <span>${producto.cantidad}</span>
                     <button class="mas" data-index="${index}">+</button>
                 </div>
-                <div class="subtotal">$${subtotal}</div>
+                <div class="subtotal">${formatearPrecio(subtotal)}</div>
                 <div class="acciones">
                     <button class="eliminar" data-index="${index}">Eliminar</button>
                 </div>
@@ -112,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
             listaCarrito.appendChild(item);
         });
 
-        if (totalCarrito) totalCarrito.innerHTML = `<h3>Total: $${total}</h3>`;
+        if (totalCarrito) totalCarrito.innerHTML = `<h3>Total: ${formatearPrecio(total)}</h3>`;
 
         const botonesMas = document.querySelectorAll(".mas");
         botonesMas.forEach(boton => {
@@ -149,3 +152,43 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+
+
+//Validacion del registro de usuario
+
+    function validarRegistro() {
+        const correo = document.getElementById('correo').value.trim();
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const errores = [];
+
+        if (!correo.includes('@')) {
+            errores.push("El correo debe contener '@'.");
+        }
+
+        if (password.length < 5 || password.length > 20) {
+            errores.push("La contraseña debe tener entre 5 y 20 caracteres.");
+        }
+
+        if (!/[A-Z]/.test(password)) {
+            errores.push("La contraseña debe tener al menos una letra mayúscula.");
+        }
+
+        if (!/[0-9]/.test(password)) {
+            errores.push("La contraseña debe tener al menos un número.");
+        }
+
+        if (password !== confirmPassword) {
+            errores.push("Las contraseñas no coinciden.");
+        }
+
+        const errorContainer = document.getElementById('errores');
+        if (errores.length > 0) {
+            errorContainer.innerHTML = errores.join('<br>');
+        } else {
+            errorContainer.innerHTML = "";
+            alert("Registro exitoso");
+            document.getElementById('registerForm').reset();
+        }
+    }
