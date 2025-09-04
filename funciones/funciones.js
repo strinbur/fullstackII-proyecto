@@ -13,7 +13,8 @@ function valformulario() {
     alert("Solicitud enviada con exito");
 }
 
-// funcion del formateo del precio para el carrito
+
+// funcion del formateo del precio para el carrito para que se vea con los puntos y el clp
 function formatearPrecio(valor) {
     return valor.toLocaleString("es-CL") + " CLP";
 }
@@ -192,3 +193,13 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('registerForm').reset();
         }
     }
+
+
+// Funcion del carrusel
+
+
+function moverCarrusel(direccion) {
+    const carrusel = document.getElementById('carousel-productos');
+    const anchoItem = carrusel.querySelector('.juego').offsetWidth + 240;
+    carrusel.scrollBy({ left: direccion * anchoItem, behavior: 'smooth' });
+}

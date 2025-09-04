@@ -2918,7 +2918,7 @@ body {
     font-size: 18px;
 }
 
-/* --- Botón Eliminar --- */
+/* Botón Eliminar */
 .item-carrito .acciones button {
     background-color: #e74c3c;
     color: white;
@@ -2933,7 +2933,7 @@ body {
     background-color: #c0392b;
 }
 
-/* --- Contenedor del total y botones --- */
+/* Contenedor del total y botones */
 .carrito-footer {
   display: flex;
   justify-content: space-between; /* separa total y botones */
@@ -2950,54 +2950,91 @@ body {
 
 .carrito-botones {
   display: flex;
-  gap: 10px; /* espacio entre botones */
+  gap: 10px;
 }
 
-/* --- Nuevo layout de carrito con resumen a la derecha --- */
-.carrito-grid {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
+
+
+/* Style del quienes somos */
+
+.quienes-somos {
+  max-width: 1220px;     /* ancho máximo para que no se vea tan ancho */
+  margin: 0 auto;       /* centra el bloque */
+  text-align: justify;  /* alinea el texto a ambos lados (más elegante) */
+  padding: 20px;
 }
 
-/* --- Sección de productos (lista) --- */
-.carrito-productos {
-    flex: 3;
+.quienes-somos h2 {
+  text-align: center;   /* centra solo el título */
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
-/* --- Resumen del carrito (total + botones) --- */
-.carrito-resumen {
-    flex: 1;
-    padding: 20px;
-    background-color: #f1f1f1;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.quienes-somos p {
+  line-height: 1.8;
+  margin-bottom: 15px;
 }
 
-.carrito-resumen .total {
-    font-size: 1.4em;
-    font-weight: bold;
+/* Style Carrusel */
+
+.carousel-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 40px auto;
+  overflow: visible;
 }
 
-.carrito-resumen .carrito-botones {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.carousel {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
 }
 
-.carrito-resumen .carrito-botones button {
-    padding: 10px;
-    background-color: #009fe3;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 1em;
+.carousel .juego {
+  flex: 0 0 calc(20% - 20px);
+  box-sizing: border-box;
 }
 
-.carrito-resumen .carrito-botones button:hover {
-    background-color: #007bbd;
+.carousel-btn {
+  position: absolute ;
+  top: 45%;
+  transform: translateY(-50%);
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 24px;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.carousel-btn:hover {
+  opacity: 1;
+}
+
+.carousel-btn.prev {
+  left: -50px;
+}
+
+.carousel-btn.next {
+  right: -50px;
+}
+
+
+@media (max-width: 992px) {
+  .carousel .juego {
+    flex: 0 0 calc(33.333% - 20px);
+  }
+}
+@media (max-width: 768px) {
+  .carousel .juego {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+@media (max-width: 480px) {
+  .carousel .juego {
+    flex: 0 0 100%;
+  }
 }
