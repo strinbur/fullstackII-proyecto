@@ -1,16 +1,14 @@
 //funcion validar el formulario para contacto
 function valformulario() {
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
+  const email = document.getElementById('user_email').value.trim();
+  const subject = document.getElementById('subject').value.trim();
+  const message = document.getElementById('message').value.trim();
 
-    document.getElementById('modalEmail').textContent = email;
-    document.getElementById('modalSubject').textContent = subject;
-    document.getElementById('modalMessage').textContent = message;
-
-    document.getElementById('contactForm').reset();
-
-    alert("Solicitud enviada con exito");
+  if (!email || !subject || !message) {
+    alert("Por favor, completa todos los campos.");
+    return false;
+  }
+  return true;
 }
 
 
@@ -62,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         actualizarCarrito();
     }
 
-    // Vaciar carrito
+    // VACIAR CARRITO
     if (vaciarBtn) {
         vaciarBtn.addEventListener("click", () => {
             localStorage.removeItem("carrito");
@@ -70,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Boton pagar
+    // PAGAR
     if (pagarBtn) {
         pagarBtn.addEventListener("click", () => {
             localStorage.removeItem("carrito");
@@ -80,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // FUNCION ACTUALIZAR CARRITO
+// FUNCION ACTUALIZAR CARRITO
     function actualizarCarrito() {
         let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
         listaCarrito.innerHTML = "";
@@ -156,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-//Validacion del registro de usuario
+//VALIDAR EL REGISTRO DEL USUARIO
 
     function validarRegistro() {
         const correo = document.getElementById('correo').value.trim();
@@ -195,11 +193,54 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-// Funcion del carrusel
+// FUNCION DEL CARRUSEL
 
 
-function moverCarrusel(direccion) {
-    const carrusel = document.getElementById('carousel-productos');
-    const anchoItem = carrusel.querySelector('.juego').offsetWidth + 240;
-    carrusel.scrollBy({ left: direccion * anchoItem, behavior: 'smooth' });
-}
+    function moverCarrusel(direccion) {
+        const carrusel = document.getElementById('carousel-productos');
+        const anchoItem = carrusel.querySelector('.juego').offsetWidth + 240;
+        carrusel.scrollBy({ left: direccion * anchoItem, behavior: 'smooth' });
+    }
+
+//FUNCION PARA ENVIAR CORREO DE NOTIFICACION
+
+
+
+// Inicializar EmailJS
+document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("lWDqvGY4Fj9noKYtz");
+
+    const contactForm = document.getElementById("contactForm");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            if (!valformulario()) return;
+
+            const userEmail = contactForm.user_email.value;
+            const subject = contactForm.subject.value;
+
+            const templateParams = {
+                userEmail: userEmail,
+                subject: subject,
+                message: `Hemos recibido su solicitud correctamente.
+Nuestro equipo está revisando su caso y nos pondremos en contacto con usted a la brevedad.
+
+Agradecemos su paciencia y quedamos atentos para asistirle en lo que necesite.
+
+Saludos cordiales,
+Microplai.`
+            };
+
+            emailjs.send("service_2wpcqd9", "template_nsebgim", templateParams)
+                .then(() => {
+                    alert("Correo enviado con éxito al usuario");
+                    contactForm.reset();
+                })
+                .catch((error) => {
+                    alert("Error al enviar: " + JSON.stringify(error));
+                });
+        });
+    }
+});

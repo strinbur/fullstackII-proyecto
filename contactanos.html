@@ -63,15 +63,15 @@
 <section id="contact-form" class="inner form-container">
 
     <header>
-        <h2>Contactanos</h2>
+        <h2>Contáctanos</h2>
         <p>Completa el formulario y te responderemos lo antes posible.</p>
     </header>
 
     <form id="contactForm" onsubmit="event.preventDefault(); valformulario();">
         <div class="fields">
             <div class="field half">
-                <label for="email">Correo electrónico</label>
-                <input type="email" name="email" id="email" placeholder="Ingrese su correo electronico..." required />
+                <label for="user_email">Correo electrónico</label>
+                <input type="email" name="user_email" id="user_email" placeholder="Ingrese su correo..." required />
             </div>
             <div class="field half">
                 <label for="subject">Asunto</label>
@@ -79,7 +79,7 @@
             </div>
             <div class="field">
                 <label for="message">Mensaje</label>
-                <textarea name="message" id="message" rows="5" placeholder="Escribe su mensaje aquí..." required></textarea>
+                <textarea name="message" id="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
             </div>
         </div>
 
@@ -89,7 +89,6 @@
         </ul>
     </form>
 </section>
-
 
 
 				
@@ -184,6 +183,8 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="funciones/funciones.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+			
 
 	</body>
 </html>
