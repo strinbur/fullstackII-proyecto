@@ -2714,14 +2714,69 @@ input, select, textarea {
     right: -130px;
     width: 60px;
     height: 100px;
+    cursor: pointer;
 }
 
 .user_login img {
     width: 70%;
     height: 70%;
     object-fit: contain;
-	display: block;
+    display: block;
 }
+
+.user_dropdown {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1),
+                0 0.25em 0.25em 0.1em rgba(0, 0, 0, 0.025);
+    min-width: 12em;
+    padding: 0.75em 0;
+    list-style: none;
+    z-index: 999;
+}
+
+.user_dropdown li {
+    border-top: solid 1px #eee;
+    line-height: 2.5em;
+    padding-left: 0;
+}
+
+.user_dropdown li:first-child {
+    border-top: 0;
+}
+
+.user_dropdown li a {
+    display: block;
+    padding: 0 1.5em;
+    color: #696969;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+.user_dropdown li a:hover {
+    background: #eee;
+}
+
+.user_login:hover .user_dropdown {
+    display: block;
+}
+
+.user_dropdown::before {
+    content: '';
+    position: absolute;
+    top: -0.5em;
+    right: 1em;
+    border-bottom: 0.75em solid #fff;
+    border-left: 0.75em solid transparent;
+    border-right: 0.75em solid transparent;
+    z-index: 1;
+}
+
 /* CONFIG ICONO DEL LOGIN */
 
 
@@ -2784,8 +2839,8 @@ body {
 }
 /*  CONFIG DEL CATALOGO */
 
-/* MENSAJE AGREGAR AL CARRITO */
 
+/* MENSAJE AGREGAR AL CARRITO */
 #mensaje-flotante {
     position: fixed;
     top: 20px;
@@ -2811,6 +2866,7 @@ body {
     pointer-events: auto;
 }
 /* MENSAJE AGREGAR AL CARRITO */
+
 
 /* Videos CON TEXTO */
 .video-texto {
@@ -2839,16 +2895,13 @@ body {
 /* TRAILER CON TEXTO */
 
 
-/* carrito */
-
-/* --- Contenedor General del Carrito --- */
+/* Style del carrito */
 .contenedor-carrito {
     max-width: 900px;
     margin: 0 auto;
     padding: 30px 15px;
 }
 
-/* --- Encabezado del carrito --- */
 .carrito-header {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -2859,7 +2912,6 @@ body {
     border-radius: 8px 8px 0 0;
 }
 
-/* --- Lista de productos --- */
 .lista-carrito {
     display: flex;
     flex-direction: column;
@@ -2869,7 +2921,6 @@ body {
     border-radius: 0 0 8px 8px;
 }
 
-/* --- Item del carrito --- */
 .item-carrito {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -2881,7 +2932,6 @@ body {
     border-radius: 6px;
 }
 
-/* --- Imagen del producto --- */
 .item-carrito .producto {
     display: flex;
     align-items: center;
@@ -2894,7 +2944,6 @@ body {
     border-radius: 4px;
 }
 
-/* --- Controles de cantidad --- */
 .item-carrito .cantidad button {
     padding: 5px 10px;
     font-weight: bold;
@@ -2918,7 +2967,6 @@ body {
     font-size: 18px;
 }
 
-/* Botón Eliminar */
 .item-carrito .acciones button {
     background-color: #e74c3c;
     color: white;
@@ -2933,11 +2981,10 @@ body {
     background-color: #c0392b;
 }
 
-/* Contenedor del total y botones */
 .carrito-footer {
   display: flex;
-  justify-content: space-between; /* separa total y botones */
-  align-items: center; /* centra verticalmente */
+  justify-content: space-between;
+  align-items: center;
   margin-top: 20px;
   padding: 15px;
   border-top: 2px solid #eee;
@@ -2952,20 +2999,18 @@ body {
   display: flex;
   gap: 10px;
 }
-
-
+/* Style del carrito */
 
 /* Style del quienes somos */
-
 .quienes-somos {
-  max-width: 1220px;     /* ancho máximo para que no se vea tan ancho */
-  margin: 0 auto;       /* centra el bloque */
-  text-align: justify;  /* alinea el texto a ambos lados (más elegante) */
+  max-width: 1220px;
+  margin: 0 auto;
+  text-align: justify;
   padding: 20px;
 }
 
 .quienes-somos h2 {
-  text-align: center;   /* centra solo el título */
+  text-align: center;
   font-size: 2em;
   margin-bottom: 20px;
 }
@@ -2975,8 +3020,8 @@ body {
   margin-bottom: 15px;
 }
 
-/* Style Carrusel */
 
+/* Style del carrusel */
 .carousel-container {
   position: relative;
   max-width: 1200px;
@@ -3038,3 +3083,112 @@ body {
     flex: 0 0 100%;
   }
 }
+
+
+/* LOGIN */
+.form-container {
+    max-width: 1700px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-container .fields > div {
+    margin-bottom: 20px;
+}
+/* LOGIN */
+
+
+
+
+
+
+
+
+
+
+
+/* DETALLES DE JUEGO */
+/* Contenedor principal */
+.detalle-container {
+    max-width: 2000px;
+    margin: 70px auto;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Contenedor superior: imagen y info */
+.detalle-superior {
+    display: flex;
+    align-items: flex-start; /* alinea info al tope de la imagen */
+    gap: 40px; /* espacio entre imagen y info */
+    flex-wrap: wrap; /* para que no se rompa en pantallas pequeñas */
+}
+
+/* Imagen del juego */
+.caratula img#imagen {
+    width: auto; /* mantiene proporcionalidad */
+    height: 600px; /* puedes ajustar a gusto */
+    border-radius: 8px;
+}
+
+/* Contenedor de información del juego */
+.detalle-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* alinea al tope de la imagen */
+    gap: 15px;
+}
+
+.detalle-info h1#titulo {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.detalle-info p#precio {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.detalle-info button#btnCarrito {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid #007bff;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    font-size: 16px;
+}
+
+.detalle-info button#btnCarrito:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* Video y descripción dentro de video-texto */
+.video-texto iframe#video {
+    width: 800px; /* igual que en tu estilo original de videos */
+    height: 500px;
+    border-radius: 8px;
+    max-width: 100%;
+}
+
+.video-texto p#descripcion {
+    max-width: 500px;
+    line-height: 1.6;
+    font-size: 16px;
+    text-align: justify;
+}
+
+/* DETALLE */
+
