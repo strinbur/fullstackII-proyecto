@@ -174,12 +174,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (
             !(
-                correo.endsWith('@duoc.cl')||
+                correo.endsWith('@duocuc.cl')||
                 correo.endsWith('@profesor.duoc.cl')||
                 correo.endsWith('@gmail.com')
             )
         ){
-            errores.push("El correo debe ser @duoc.cl, @profesor.duoc.cl o @gmail.com");
+            errores.push("El correo debe ser @duocuc.cl, @profesor.duoc.cl o @gmail.com");
         }
 
         if (password.length < 5 || password.length > 20) {
@@ -220,7 +220,7 @@ function validarLogin() {
     return false;
   }
 
-  const regexCorreo = /^[^\s@]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
+  const regexCorreo = /^[^\s@]+@(duocuc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
   if (!regexCorreo.test(correo)) {
     erroresDiv.textContent = "Error correo electronico incorrecto";
     return false;
@@ -245,10 +245,9 @@ function validarLogin() {
         const anchoItem = carrusel.querySelector('.juego').offsetWidth + 240;
         carrusel.scrollBy({ left: direccion * anchoItem, behavior: 'smooth' });
     }
+
+
 //FUNCION PARA ENVIAR CORREO DE NOTIFICACION
-
-
-
 // Inicializar EmailJS
 document.addEventListener("DOMContentLoaded", function () {
     emailjs.init("lWDqvGY4Fj9noKYtz");
@@ -335,7 +334,7 @@ function obtenerInfoJuego(nombre) {
         {
             nombre: "Metal Gear Solid Snake eater PS5",
             descripcion:"Descubre el origen del icónico agente militar Snake y empieza a desentrañar la trama de la legendaria saga Metal Gear. En secreto, naciones rivales desarrollan armas que podrían poner en peligro el futuro de la humanidad. En la profundidad de la selva, un soldado de élite debe combinar habilidades de sigilo y supervivencia para infiltrarse entre el enemigo e impedir que un arma de destrucción masiva desate la mayor guerra que el mundo haya visto.",
-            video: "https://www.youtube.com/embed/SRQM7bf6DOg"
+            video: "https://www.youtube.com/embed/ajh3YHJ6baI"
         },
         {
             nombre: "God of war ragnarok PS5",
@@ -560,7 +559,7 @@ function obtenerInfoJuego(nombre) {
         {
             nombre:"Metal Gear solid Snake eater XBOX",
             descripcion:"El principio de todo. Una adaptación del juego METAL GEAR SOLID 3: SNAKE EATER de 2004, con la historia irresistible y el mundo fascinante que ya conoces, ahora con gráficos renovados y sonido 3D que potencian el ambiente selvático. Prepárate para la experiencia definitiva de supervivencia, sigilo y acción. Todo lo que te encanta y todavía más. Vuelven la historia, los personajes, el doblaje, la jugabilidad y la música que causaron un gran impacto en una nueva versión para las consolas de la actual generación. Este salto evolutivo otorga a cada escena una nueva vida y reconstruye cada rincón del mundo. Auténticas representaciones de la vida real. Se ha mejorado el sistema de daños en combate con el desgaste de la ropa de Snake, así como los moratones y las heridas de bala de su cuerpo, todo reflejado en tiempo real. Cualquier lesión que sufra dejará una huella permanente en el cuerpo de Snake, lo que supone una aventura única para cada jugador.",
-            video: "https://www.youtube.com/embed/SRQM7bf6DOg"
+            video: "https://www.youtube.com/embed/ajh3YHJ6baI"
         },
         
 
